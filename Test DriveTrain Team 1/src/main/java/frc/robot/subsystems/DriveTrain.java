@@ -37,22 +37,39 @@ import frc.robot.Constants;
 /**
  * Drivetrain
  * 
+ * https://drive.google.com/drive/u/2/folders/1nbEa38pF2X69KUjKDAiirit1GARPqtWp - Tech slides
+ * 
  * @author Aadit Gupta
  * @author Raadwan Masum
  * @author Rohan Juneja
  */
 @SuppressWarnings("PMD.TooManyFields")
 public class DriveTrain extends SubsystemBase {
+  // initializes left motor variables
   private WPI_VictorSPX m_leftFrontMotor = new WPI_VictorSPX(Constants.CAN.drive_lf);
   private WPI_TalonSRX m_leftBackMotor = new WPI_TalonSRX(Constants.CAN.drive_lb);
   public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor, m_leftBackMotor);
 
+  // initializes right motor variables
   private WPI_VictorSPX m_rightFrontMotor = new WPI_VictorSPX(Constants.CAN.drive_rf);
   private WPI_TalonSRX m_rightBackMotor = new WPI_TalonSRX(Constants.CAN.drive_rb);
   public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
 
+  // controlls all variables simultaniously
   public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
 
-  private final PIDController m_leftPIDController = new PIDController(1.0, 0.5, 0);
-  private final PIDController m_rightPIDController = new PIDController(1.0, 0.5, 0);
+  // used to controll the motors on the x axis and rotation
+  public void arcadeDrive(double fwd, double rot) {
+    m_drive.arcadeDrive(fwd, rot);
+  }
+
+  // constuctor for DriveTrain class
+  public DriveTrain() {
+    
+    // sets the values to positive
+    m_leftMotors.setInverted(true);
+    m_rightMotors.setInverted(true);
+
+  }
+
   }

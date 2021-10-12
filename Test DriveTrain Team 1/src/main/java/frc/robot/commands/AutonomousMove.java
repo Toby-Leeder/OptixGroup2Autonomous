@@ -8,7 +8,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Timer;
 import frc.robot.subsystems.DriveTrain;
-
+import frc.robot.Constants;
 
 /** An example command that uses an example subsystem. */
 
@@ -22,7 +22,7 @@ public class AutonomousMove extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public AutonomousMove(Drivetrain drive) {
+  public AutonomousMove(DriveTrain drive) {
     m_drive = drive;
     addRequirements(m_drive);
   }
@@ -37,7 +37,7 @@ public class AutonomousMove extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_drive.arcadeDrive(Constants.CAN.AutoSpeed);
+    m_drive.arcadeDrive(Constants.CAN.AutoSpeed, 0);
   }
 
   // Called once the command ends or is interrupted.

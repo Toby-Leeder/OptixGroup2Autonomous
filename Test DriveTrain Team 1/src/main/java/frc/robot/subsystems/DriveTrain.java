@@ -70,5 +70,8 @@ public class DriveTrain extends SubsystemBase {
     m_rightMotors.setInverted(true);
 
   }
+public void stopMotors(){
+  m_drive.arcadeDrive(0,0);
+}
 
   }

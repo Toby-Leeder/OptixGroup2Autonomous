@@ -54,7 +54,7 @@ public class RobotContainer {
     return m_drive;
   }
 
-  public Command getAutonmousCommand() {
+  public Command getAutonomousCommand() {
     return m_autoDrive;
   }
 

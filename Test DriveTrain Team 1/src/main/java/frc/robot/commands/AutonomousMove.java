@@ -30,8 +30,8 @@ public class AutonomousMove extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_drive.arcadeDrive(Constants.CAN.AutoSpeed, 0);
-    m_timer.start();
+    // m_drive.arcadeDrive(Constants.CAN.AutoSpeed, 0);
+    // m_timer.start();
   }
 
 
@@ -48,6 +48,7 @@ public void execute() {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_timer.get() > 1;
+    // return m_timer.get() > 1;
+    return false;
   }
 }

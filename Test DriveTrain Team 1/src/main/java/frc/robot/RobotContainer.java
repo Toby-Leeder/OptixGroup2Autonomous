@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.AutonomousMove;
+import frc.robot.commands.Figure;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -25,8 +26,8 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public final DriveTrain m_drive = new DriveTrain();
   public XboxController m_xboxController = new XboxController(0);
-  public final Command m_autoDrive = new AutonomousMove(m_drive);
-
+  //public final Command m_autoDrive = new AutonomousMove(m_drive);
+  public final Command m_autoDrive = new Figure(m_drive);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     configureButtonBindings();
@@ -57,5 +58,5 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     return m_autoDrive;
   }
-
+  
 }

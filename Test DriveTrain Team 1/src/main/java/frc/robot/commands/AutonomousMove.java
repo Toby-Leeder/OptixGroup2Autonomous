@@ -30,13 +30,14 @@ public class AutonomousMove extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_drive.arcadeDrive(Constants.CAN.AutoSpeed, 0);
     m_timer.start();
   }
 
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
+public void execute() {
     m_drive.arcadeDrive(Constants.CAN.AutoSpeed, 0);
   }
 

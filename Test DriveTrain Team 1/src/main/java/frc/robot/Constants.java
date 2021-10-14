@@ -22,6 +22,8 @@ public final class Constants {
         public static final int drive_rf = 23;
         public static final int drive_rb = 15;
         public static final double AutoSpeed = 0.5;
+        public static final int loopRotation = 1;
+         
   }
 
 }

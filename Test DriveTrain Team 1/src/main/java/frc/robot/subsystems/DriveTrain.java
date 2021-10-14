@@ -57,12 +57,11 @@ public class DriveTrain extends SubsystemBase {
 
   // controlls all variables simultaniously
   public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
-
   // used to controll the motors on the x axis and rotation
   public void arcadeDrive(double fwd, double rot) {
     m_drive.arcadeDrive(fwd, rot);
   }
-
+  
   // constuctor for DriveTrain class
   public DriveTrain() {
     

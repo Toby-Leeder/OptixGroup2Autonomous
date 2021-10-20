@@ -30,22 +30,22 @@ public class Figure extends CommandBase {
   @Override
   public void initialize() {
     m_timer.start();
-        
+    if (m_timer.get() < 4){
+      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, -Constants.CAN.loopRotation);
+    }
+    else if (m_timer.get() < 12 && m_timer.get() > 4){
+      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, Constants.CAN.loopRotation);
+    }
+    else if (m_timer.get() < 16 && m_timer.get() > 12){
+      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, -Constants.CAN.loopRotation);
+    }   
   }
 
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      if (m_timer.get() > 1){
-      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, -Constants.CAN.loopRotation);
-    }
-    else if (m_timer.get() > 3){
-      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, Constants.CAN.loopRotation);
-    }
-    else if (m_timer.get() > 4){
-      m_drive.arcadeDrive(Constants.CAN.AutoSpeed, -Constants.CAN.loopRotation);
-    }
+      
   }
 // Negative Constants.CAN makes motor turn other way.
 
@@ -56,6 +56,6 @@ public class Figure extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_timer.get() > 4;
+    return m_timer.get() > 16;
   }
 }

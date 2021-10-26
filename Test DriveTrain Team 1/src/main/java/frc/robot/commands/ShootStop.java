@@ -4,7 +4,7 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -14,31 +14,36 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /** An example command that uses an example subsystem. */
-public class Shooter extends CommandBase {
+public class ShootStop extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final Shooter m_shooter;
+  private final Shooter m_shoot;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public Shooter(ShooterSubsystem shooter) {
-    m_shooter = shooter;
+  public ShootStop(Shooter shoot) {
+    m_shoot = shoot;
     // Use addRequirements() here to declare subsystem dependencies.
-    //addRequirements(m_subsystem);   
+    //addRequirements(m_shoot);   
       
-    //      \(`^`)/\(*~`)/\(^u^)/¯\_(ツ)_/¯\(o_O)/
+    //      \(`^`)/\(*~`)/\(^u^)/¯\_(ツ)_/¯\(o_O)/\(-_-)7
   }
 
   // Called when the command is initially scheduled.
+
+
+
   @Override
   public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
-    m_shooter.set()
+  public void execute() {
+        m_shoot.stop();
+
+  }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
@@ -49,5 +54,7 @@ public class Shooter extends CommandBase {
     return false;
   }
   
+
+}
    // PID coefficients
    

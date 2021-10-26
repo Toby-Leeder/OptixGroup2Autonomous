@@ -33,6 +33,7 @@ import edu.wpi.first.wpilibj.system.plant.LinearSystemId;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpiutil.math.numbers.N2;
 import frc.robot.Constants;
+//import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 
 /**
  * Drivetrain
@@ -49,7 +50,7 @@ public class DriveTrain extends SubsystemBase {
   private WPI_VictorSPX m_leftFrontMotor = new WPI_VictorSPX(Constants.CAN.drive_lf);
   private WPI_TalonSRX m_leftBackMotor = new WPI_TalonSRX(Constants.CAN.drive_lb);
   public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor, m_leftBackMotor);
-
+  
   // initializes right motor variables
   private WPI_VictorSPX m_rightFrontMotor = new WPI_VictorSPX(Constants.CAN.drive_rf);
   private WPI_TalonSRX m_rightBackMotor = new WPI_TalonSRX(Constants.CAN.drive_rb);

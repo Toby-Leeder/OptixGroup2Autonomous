@@ -39,7 +39,7 @@ public class DriveTrain extends SubsystemBase {
     m_drive.arcadeDrive(fwd, rot);
   }
   
-  // constuctor for DriveTrain class
+  // constructor for DriveTrain class
   public DriveTrain() {
     
     // sets the values to positive

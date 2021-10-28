@@ -32,9 +32,9 @@ public class DriveTrain extends SubsystemBase {
   private WPI_TalonSRX m_rightBackMotor = new WPI_TalonSRX(Constants.CAN.drive_rb);
   public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
   
-  // controlls all variables simultaniously
+  // controls all variables simultaniously
   public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
-  // used to controll the motors on the x axis and rotation
+  // used to control the motors on the x axis and rotation
   public void arcadeDrive(double fwd, double rot) {
     m_drive.arcadeDrive(fwd, rot);
   }

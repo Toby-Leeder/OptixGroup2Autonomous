@@ -23,6 +23,7 @@ public final class Constants {
         public static final int drive_rb = 15;
         public static final double AutoSpeed = .9;
         public static final double loopRotation = .8;
+        public static final int shootSpeed = 4000;
          
   }
 

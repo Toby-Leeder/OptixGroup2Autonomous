@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Constants;
 
 
 /** An example command that uses an example subsystem. */
@@ -41,7 +42,7 @@ public class Shoot extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-        m_shoot.set(4500, 4000);
+        m_shoot.set(m_shoot.getEncoderValue(), Constants.CAN.shootSpeed);
 
   }
   // Called once the command ends or is interrupted.
